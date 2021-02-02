@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace Lessons
+namespace TheSecretOfAhmed
 {
     public class Credits
     {

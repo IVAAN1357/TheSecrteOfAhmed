@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lessons
+namespace TheSecretOfAhmed
 {
     class Sound
     {
@@ -14,71 +10,28 @@ namespace Lessons
             switch (Notes)
             {
                 case "Win": // победная мелодия
-                    Console.Beep(330, 300);
-                    Console.Beep(349, 200);
-                    Console.Beep(392, 300);
-                    Console.Beep(523, 400);
-                    Console.Beep(294, 300);
-                    Console.Beep(330, 200);
-                    Console.Beep(349, 400);
-                    Console.Beep(349, 300);
-                    Console.Beep(392, 200);
-                    Console.Beep(440, 300);
-                    Console.Beep(698, 400);
-                    Console.Beep(440, 300);
-                    Console.Beep(494, 200);
-                    Console.Beep(523, 400);
-                    Console.Beep(587, 400);
-                    Console.Beep(659, 400);
-                    Console.Beep(330, 300); //выход на окончание
-                    Console.Beep(349, 200);
-                    Console.Beep(392, 300);
-                    Console.Beep(523, 400);
-                    Console.Beep(587, 300);
-                    Console.Beep(659, 200);
-                    Console.Beep(698, 400);
-                    Console.Beep(392, 300);//скачки
-                    Console.Beep(392, 200);
-                    Console.Beep(659, 400);
-                    Console.Beep(587, 250);
-                    Console.Beep(392, 200);
-                    Console.Beep(659, 400);
-                    Console.Beep(587, 250);
-                    Console.Beep(392, 200);
-                    Console.Beep(659, 400);
-                    Console.Beep(587, 250);
-                    Console.Beep(392, 200);
-                    Console.Beep(659, 300);
-                    Console.Beep(587, 300);
+                    int[,] winMelody = { { 330, 300 }, { 349, 200 }, { 392, 300 }, { 523, 400 }, { 294, 300 }, { 330, 200 }, { 349, 400 }, { 349, 300 }, { 392, 200 }, { 440, 300 }, { 698, 400 }, { 440, 300 }, { 494, 200 }, { 523, 400 }, { 587, 400 }, { 659, 400 }, { 330, 300 }, { 349, 200 }, { 392, 300 }, { 523, 400 }, { 587, 300 }, { 659, 200 }, { 698, 400 }, { 392, 300 }, { 392, 200 }, { 659, 400 }, { 587, 250 }, { 392, 200 }, { 659, 400 }, { 587, 250 }, { 392, 200 }, { 659, 400 }, { 587, 250 }, { 392, 200 }, { 659, 300 }, { 587, 300 } };
+                    for (int i = 0; i < winMelody.GetLength(0); i++)
+                    {
+                        Console.Beep(winMelody[i, 0], winMelody[i, 1]);
+                    }
                     break;
                 case "1": // мелодия бега
                     Notes = "C1E1C1E1";
                     goto default;
                 case "2": // Money
-                    delay = 100;
-                    Console.Beep(247, 3 * delay);
-                    Console.Beep(494, 2 * delay);
-                    Console.Beep(349, 1 * delay);
-                    Console.Beep(247, 3 * delay);
-                    Console.Beep(175, 3 * delay);
-                    Console.Beep(220, 3 * delay);
-                    Console.Beep(247, 3 * delay);
-                    Console.Beep(294, 3 * delay);
-                    Console.Beep(247, 3 * delay);
+                    int[,] moneyMelody = { { 247, 300 }, { 494, 200 }, { 349, 100 }, { 247, 300 }, { 175, 300 }, { 220, 300 }, { 247, 300 }, { 294, 300 }, { 247, 300 } };
+                    for (int i = 0; i < moneyMelody.GetLength(0); i++)
+                    {
+                        Console.Beep(moneyMelody[i, 0], moneyMelody[i, 1]);
+                    }
                     break;
                 case "3": // Atom Heart Mother
-                    delay = 100;
-                    Console.Beep(196, 2 * delay);
-                    Console.Beep(165, 2 * delay);
-                    Console.Beep(196, 2 * delay);
-                    Console.Beep(330, 2 * delay);
-                    Console.Beep(294, 4 * delay);
-                    Console.Beep(247, 2 * delay);
-                    Console.Beep(196, 2 * delay);
-                    Console.Beep(262, 4 * delay);
-                    Console.Beep(220, 2 * delay);
-                    Console.Beep(175, 2 * delay);
-                    Console.Beep(196, 4 * delay);
+                    int[,] atomHeartMotherMelody = { { 196, 200 }, { 165, 200 }, { 196, 200 }, { 330, 200 }, { 294, 400 }, { 247, 200 }, { 196, 200 }, { 262, 400 }, { 220, 200 }, { 175, 200 }, { 196, 400 } };
+                    for (int i = 0; i < atomHeartMotherMelody.GetLength(0); i++)
+                    {
+                        Console.Beep(atomHeartMotherMelody[i, 0], atomHeartMotherMelody[i, 1]);
+                    }
                     break;
                 default:
                     int note;

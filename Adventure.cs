@@ -1,13 +1,7 @@
 ﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Lessons
+namespace TheSecretOfAhmed
 {
     class Adventure
     {
@@ -59,7 +53,7 @@ namespace Lessons
         string Flag;
         string quit = "";
         public Adventure(Hero player) { this.player = player; }
-        public void BeutyText(string s, string Notes)
+        public void PrintStory(string s, string Notes)
         {
             Task task = new Task(() => music.Play(Notes));
             task.Start();
@@ -88,16 +82,16 @@ namespace Lessons
                 Console.Clear();
                 var pos = (1, 0);
                 string questText = GetQuest(pos);
-                player.GetStatic();
-                pos = (2, player.GetAction(questText));
+                player.PrintStatic();
+                pos = (2, player.PrintChoice(questText));
                 questText = GetQuest(pos);
-                player.GetStatic();
-                pos = (3, player.GetAction(questText));
+                player.PrintStatic();
+                pos = (3, player.PrintChoice(questText));
                 questText = GetQuest(pos);
-                player.GetStatic();
-                pos = (4, player.GetAction(questText));
+                player.PrintStatic();
+                pos = (4, player.PrintChoice(questText));
                 questText = GetQuest(pos);
-                player.GetStatic();
+                player.PrintStatic();
                 Console.CursorVisible = true;
                 int a = 9;
                 if (win)
@@ -430,7 +424,7 @@ namespace Lessons
                 s = $@"В очень жестокой борьбе молодой {player.Name} убил старого себя и потерял {damage} единц{bi} здоровья.
 {player.Name} умер.";
             }
-            BeutyText(s, n.Item2.ToString());
+            PrintStory(s, n.Item2.ToString());
             return s;
         }
     }

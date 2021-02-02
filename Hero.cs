@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Lessons
+namespace TheSecretOfAhmed
 {
     class Hero
     {
-        public int Coins = 100;
-        public int Health = 100;
-        public string Name;
-        public int GetAction(string s)
+        public int Coins { get; set; }
+        public int Health { get; set; }
+        public string Name { get; set; }
+        public Hero()
+        {
+            Coins = 100;
+            Health = 100;
+        }
+        public int PrintChoice(string s)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0, 8);
@@ -19,14 +20,13 @@ namespace Lessons
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("2. Отдать деньги\n3. Сражаться");
             int res = 1;
-            ConsoleKey butt = Console.ReadKey().Key;
-            while (butt != ConsoleKey.Enter)
+            ConsoleKey button = Console.ReadKey().Key;
+            while (button != ConsoleKey.Enter)
             {
-                switch (butt)
+                switch (button)
                 {
                     case ConsoleKey.UpArrow:
                         {
-
                             if (res == 1)
                             {
                                 res = 3;
@@ -92,13 +92,13 @@ namespace Lessons
                             break;
                         }
                 }
-                butt = Console.ReadKey().Key;
+                button = Console.ReadKey().Key;
             }
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Green;
             return res;
         }
-        public void GetStatic()
+        public void PrintStatic()
         {
             switch (Coins)
             {
@@ -127,7 +127,5 @@ namespace Lessons
             Console.WriteLine($"Твои жизни: {Health}\n");
             Console.ForegroundColor = ConsoleColor.Green;
         }
-
-
     }
 }
